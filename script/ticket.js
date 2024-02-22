@@ -60,7 +60,7 @@ function validCoupon() {
     }
     else {
         alert("Wrong Coupon");
-        document.getElementById("input-field").value= " ";
+        document.getElementById("input-field").value= "";
         return;
     }
     let grandValue = totalPrice - discountPrice;
