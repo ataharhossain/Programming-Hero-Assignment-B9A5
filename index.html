@@ -31,7 +31,7 @@
                   <h2 class="text-4xl font-bold text-[#1DD100]">A-Poribahan</h2>
                   <p class="text-white text-sm ">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
                   <!-- buy ticket button -->
-                  <button class="btn bg-[#1DD100] text-black p-4 ">Buy Ticket</button>
+                  <button class="btn bg-[#1DD100] text-black p-4 "><a href="#ticket-info">Buy Ticket</a></button>
               </div>
               <div class="w-3/4 flex justify-between bottom-0 relative  md:top-25 lg:top-36">
                  <div class="w-1/4 bg-white rounded-md border-b-2 border-[#1DD100] flex p-3">
@@ -91,7 +91,7 @@
         </section>
      
         <!-- Ticket information section -->
-        <section>
+        <section id="ticket-info">
              <div class="mx-0 mt-8 w-full bg-[#F7F8F8]  border-t-2 border-[#1DD100] rounded-t-3xl">
                  <div class="flex flex-col gap-3 p-7 justify-center items-center w-11/12 mx-auto ">
                      <h2 class="text-2xl font-bold px-4">S Paribahan</h2>
@@ -172,8 +172,8 @@
                                         <p class="w-4">J</p>
                                     </div>
                                     <div class="grid grid-cols-2 gap-4 text-center">
-                                        <kbd id="A1" onclick="aboutSeat(this);" class="kbd w-24">A1</kbd>
-                                        <kbd class="kbd w-24">A2</kbd>
+                                        <kbd id="A1" class="seatlist kbd w-24">A1</kbd>
+                                        <kbd id="A2" class="seatlist kbd w-24">A2</kbd>
                                         <kbd id="B1" class="seatlist kbd w-24">B1</kbd>
                                         <kbd id="B2" class="seatlist kbd w-24">B2</kbd>
                                         <kbd id="C1" class="seatlist kbd w-24">C1</kbd>
@@ -240,7 +240,7 @@
                                     <div>BD <span id="total-price" >0</span></div>
                                 </div>
                                 <!-- Coupon place holder -->
-                                <div>
+                                <div id="coupon">
                                     <label class="input input-bordered flex justify-between items-center gap-2 mx-6">
                                         <input id="input-field" type="text" class="grow" placeholder="Coupon Code" />
                                         <button onclick="validCoupon()" class="btn bg-[#1DD100] text-white">Apply</button>
@@ -265,22 +265,27 @@
                                     <p class="font-bold">Email ID</p>
                                     <input class="border-2 rounded-md border-gray-400 w-full p-2" type="email" placeholder="Enter your email id">
                                 </div>
-                                <!-- next button -->
-                                <button class="btn w-full bg-[#1DD100] text-white font-bold hidden">Next</button>
+                                                                    <!-- next button -->
+                                    <!-- You can open the modal using ID.showModal() method -->
+                                    <button class="btn" onclick="my_modal_4.showModal()">open modal</button>
+                                    <dialog id="my_modal_4" class="modal">
+                                    <div class="modal-box w-11/12 max-w-5xl">
+                                        <h3 class="font-bold text-lg">Hello!</h3>
+                                        <p class="py-4">Click the button below to close</p>
+                                        <div class="modal-action">
+                                        <form method="dialog">
+                                            <!-- if there is a button, it will close the modal -->
+                                            <button class="btn">Close</button>
+                                        </form>
+                                        </div>
+                                    </div>
+                                    </dialog>                            
                             </div>
 
                         </div>
                      </div>
                  </div>
 
-                 <!-- SUCCESS div -->
-                 <div class="hidden w-1/2 h-auto  p-5 bg-white flex flex-col border-2 border-black justify-center items-center text-center mx-auto my-44 ">
-                 <img class="w-15 h-15" src="./images/success.png" alt="">
-                 <h2 class="mb-3 p-3 text-green-500 text-xl">SUCCESS</h2>
-                 <p class="font-bold p-3">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you.</p>
-                 <p>Shortly you will find a confirmation in your email.</p>
-                 <button class="btn bg-green-500 text-black p-4">Continue</button>
-                 </div>
              </div>
         </section>
     </main>

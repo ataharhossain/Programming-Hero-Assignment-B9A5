@@ -3,6 +3,7 @@ let selectedSeat = 0;
 let totalPrice = 0;
 let availableSeat = 4;
 let discountPrice = 0;
+const customerSelected = [];
 let seatDiv= document.getElementById('classKBD');
 const seats = document.querySelectorAll('.seatlist');
 for(let i = 0; i < seats.length; i++) {
@@ -11,6 +12,14 @@ for(let i = 0; i < seats.length; i++) {
         if(availableSeat <= 0){
             alert("You Can't Buy all The seat IDIOT !!");
             return;
+        }
+        if(customerSelected.includes(seat.innerText))
+        {
+            alert("This ticket on sell");
+            return;
+        }
+        else{
+            customerSelected.push(seat.innerText);
         }
     const update = document.getElementById('push-seat-details');
     const mainDiv = document.createElement("div");
@@ -40,20 +49,23 @@ for(let i = 0; i < seats.length; i++) {
 function validCoupon() {
     const val1 = document.getElementById('input-field');
     const val =val1.value;
+    console.log("val",  val);
     if(val === "NEW15" || val === "Couple 20"){
         if(val === "NEW15") {
-            discountPrice = discountPrice * 0.15;
+            discountPrice = totalPrice * 0.15;
         }
         else {   
-      discountPrice = discountPrice * 0.20;
+      discountPrice = totalPrice * 0.20;
     }
     }
     else {
         alert("Wrong Coupon");
         document.getElementById("input-field").value= " ";
+        return;
     }
     let grandValue = totalPrice - discountPrice;
     setValue("grand-total", grandValue);
+    document.getElementById('coupon').classList.add('hidden');
 
-    console.log("connected");
+
 }
