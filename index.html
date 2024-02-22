@@ -265,17 +265,20 @@
                                     <p class="font-bold">Email ID</p>
                                     <input class="border-2 rounded-md border-gray-400 w-full p-2" type="email" placeholder="Enter your email id">
                                 </div>
-                                                                    <!-- next button -->
+                                                        
                                     <!-- You can open the modal using ID.showModal() method -->
-                                    <button class="btn" onclick="my_modal_4.showModal()">open modal</button>
+                                    <button class="btn bg-[#1DD100]" onclick="my_modal_4.showModal()">Next</button>
                                     <dialog id="my_modal_4" class="modal">
-                                    <div class="modal-box w-11/12 max-w-5xl">
-                                        <h3 class="font-bold text-lg">Hello!</h3>
-                                        <p class="py-4">Click the button below to close</p>
+                                    <div class="modal-box w-auto m-4 max-w-5xl flex flex-col justify-center items-center text-center">
+                                        <img class="w-20 h-20" src="./images/success.png" alt="">
+                                        <h3 class="font-bold text-lg text-green-500 p-3">SUCCESS</h3>
+                                        <p class="py-4 font-bold">Thank you for Booking Our Bus Seats.<br> 
+                                            We are working hard to find the best service and deals for you</p>
+                                        <p>Shortly you will find a confirmation in your email.</p>
                                         <div class="modal-action">
                                         <form method="dialog">
                                             <!-- if there is a button, it will close the modal -->
-                                            <button class="btn">Close</button>
+                                            <button class="btn bg-green-600">Continue</button>
                                         </form>
                                         </div>
                                     </div>
